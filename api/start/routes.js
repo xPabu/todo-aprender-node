@@ -16,22 +16,12 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.get('/task', () => {
-  return { greeting: 'Hello world in JSON' }
-})
+Route.get('/task', 'TaskController.index')
 
-Route.list('/task', () => {
-  return { greeting: 'Hello world in JSON' }
-})
+Route.get('/task/:id', 'TaskController.show')
 
-Route.post('/task', () => {
-  return { greeting: 'Hello world in JSON' }
-})
+Route.post('/task', 'TaskController.store')
 
-Route.put('/task', () => {
-  return { greeting: 'Hello world in JSON' }
-})
+Route.put('/task/:id', 'TaskController.update')
 
-Route.delete('/task', () => {
-  return { greeting: 'Hello world in JSON' }
-})
+Route.delete('/task/:id', 'TaskController.destroy')
